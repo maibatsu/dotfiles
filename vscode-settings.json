@@ -1,0 +1,127 @@
+{
+  "update.showReleaseNotes": false,
+  "editor.fontSize": 14,
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "boundary",
+  "editor.lineHeight": 25,
+  "editor.fontFamily": "'IBM Plex Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.minimap.enabled": false,
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 120,
+  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "editor.tabCompletion": "on",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+  "editor.linkedEditing": true,
+  "editor.lightbulb.enabled": false,
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.smoothScrolling": true,
+  "editor.wordSeparators": "`~!@#$%^&*()-_=+[{]}\\|;:'\",.<>/?",
+  "editor.bracketPairColorization.enabled": true,
+  "explorer.compactFolders": false,
+  "workbench.editor.wrapTabs": false,
+  "workbench.editor.decorations.colors": true,
+  "workbench.editor.decorations.badges": true,
+  "workbench.colorTheme": "Default Light+",
+  "workbench.editor.enablePreview": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.title": "${rootName}${separator}${activeEditorLong}${separator}${dirty}${activeEditorShort}",
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.symbolPath": "off",
+  "git.autofetch": true,
+  "git.autofetchPeriod": 120,
+  "git.rebaseWhenSync": false,
+  "extensions.ignoreRecommendations": true,
+  "html.format.indentHandlebars": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/addons/*/app/**/*.js": true
+  },
+  "search.showLineNumbers": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true,
+    // "source.organizeImports": true,
+  },
+  "[typescriptreact]": {
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "mrmlnc.vscode-scss"
+  },
+  "[html]": {
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.suggest.completeFunctionCalls": true,
+  "yaml.format.enable": true,
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "yaml.format.singleQuote": true,
+  "[javascript]": {
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.autoSave": "off",
+  "problems.showCurrentInStatus": true,
+  "javascript.format.semicolons": "insert",
+  "typescript.format.semicolons": "insert",
+  "eslint.packageManager": "yarn",
+  "npm.packageManager": "yarn",
+  "npm-intellisense.packageSubfoldersIntellisense": true,
+  "stylelint.packageManager": "yarn",
+  "stylelint.validate": [
+    "css",
+    "sass",
+    "scss",
+  ],
+  "vsintellicode.java.completionsEnabled": false,
+  "vsintellicode.sql.completionsEnabled": false,
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "javascript.suggest.completeFunctionCalls": true,
+  "eslint.workingDirectories": [
+    "packages/twilight",
+    "packages/cadanse",
+    "packages/fluttershy"
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "eslint.alwaysShowStatus": true,
+  "eslint.migration.2_x": "off",
+  "typescript.tsserver.log": "normal",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "redhat.telemetry.enabled": false,
+  "workbench.iconTheme": "vs-minimal",
+  "git.confirmSync": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.exclude": {
+    "**/.git": false
+  }
+}
