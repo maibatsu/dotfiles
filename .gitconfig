@@ -1,6 +1,7 @@
 [user]
   name = Andrei Orlov
   email = andyorlov@ya.ru
+  ssigningkey = F6247EE925DC59FA
 [credential]
   helper = cache --timeout=3600
 [color]
@@ -25,6 +26,10 @@
   autoStash = true
 [branch]
   autosetuprebase = always
+[gpg]
+  program = /usr/local/bin/gpg
+[commit]
+  gpgsign = true
 [alias]
   s = status --short --branch
   cf = commit --fixup
