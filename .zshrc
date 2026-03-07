@@ -1,27 +1,45 @@
-alias ll='ls -la'
-alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | tr -d '\n' | pbcopy"
-
-setopt prompt_subst
-
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*:*' check-for-changes true # can be slow on big repos
-zstyle ':vcs_info:*:*' unstagedstr '%F{red}'
-zstyle ':vcs_info:*:*' actionformats "[%F{green}%u%b%f %a]"
-zstyle ':vcs_info:*:*' formats       "[%F{green}%u%b%f]"
-
-function parse_git_branch() {
-    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/[\1]/p'
-}
-
-COLOR_DEF=$'\e[0m'
-COLOR_USR=$'\e[38;5;243m'
-COLOR_DIR=$'\e[38;5;197m'
-COLOR_GIT=$'\e[38;5;39m'
-
+# Shell options
 setopt PROMPT_SUBST
 
-export PROMPT='${COLOR_USR}%n ${COLOR_DIR}%~ ${COLOR_GIT}$(parse_git_branch)${COLOR_DEF} $ '
+# Environment variables
+export GPG_TTY=$(tty)
 
-if [ -r ~/.zshrc ]; then echo 'export GPG_TTY=$(tty)' >> ~/.zshrc; \
-  else echo 'export GPG_TTY=$(tty)' >> ~/.zprofile; fi
+# Utility functions
+git_clean_branches() {
+	echo "--- Fetching and pruning ---"
+	git fetch --prune
+
+	local branches_to_delete=$(git branch --merged | grep -vE '^\*|master|main|stable')
+
+	if [ -n "$branches_to_delete" ]; then
+		echo "--- Deleting merged branches ---"
+		echo "$branches_to_delete" | xargs -n 1 git branch -d
+	else
+		echo "--- No merged branches to delete ---"
+	fi
+}
+
+# Aliases
+alias gbclean=git_clean_branches
+alias ll='ls -la'
+alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | tr -d '\n' | pbcopy"
+alias rmnode='find . -type d -name "node_modules" -prune -exec rm -rf '{}' +'
+
+# Prompt appearance
+COLOR_DEF='%f'
+COLOR_USR='%F{243}'
+COLOR_DIR='%F{197}'
+COLOR_GIT='%F{39}'
+
+PROMPT='${COLOR_USR}%n ${COLOR_DIR}%~${vcs_info_msg_0_} ${COLOR_DEF}$ '
+
+# Version control (Git prompt integration)
+autoload -Uz vcs_info
+
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*:*' check-for-changes true
+zstyle ':vcs_info:*:*' unstagedstr '%F{red}*'
+zstyle ':vcs_info:*:*' formats       " ${COLOR_GIT}(%b%u)${COLOR_DEF}"
+zstyle ':vcs_info:*:*' actionformats " ${COLOR_GIT}(%b%u | %a)${COLOR_DEF}"
+
+precmd_functions+=(vcs_info)

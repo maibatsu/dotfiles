@@ -1,40 +1,41 @@
-[user]
-  name = Andrei Orlov
-  email = andyorlov@ya.ru
-  ssigningkey = F6247EE925DC59FA
+[include]
+	path = ~/.gitconfig-local
 [credential]
-  helper = cache --timeout=3600
+	helper = cache --timeout=3600
 [color]
-  ui = true
-  branch = auto
-  diff = auto
-  status = auto
+	ui = true
+	branch = auto
+	diff = auto
+	status = auto
 [core]
-  editor = vim
-  autocrlf = input
-  excludesfile = ~/.gitignore
+	editor = mate
+	autocrlf = input
+	excludesfile = ~/.gitignore_global
 [rerere]
-  enabled = true
+	enabled = true
 [merge]
-  conflictstyle = diff3
+	conflictstyle = diff3
 [diff]
-  algorithm = patience
-  renames = true
+	algorithm = patience
+	renames = true
+	colorMoved = zebra
+	colorMovedWS = allow-indentation-change
 [pull]
-  rebase = true
+	rebase = true
 [rebase]
-  autoStash = true
+	autoStash = true
 [branch]
-  autosetuprebase = always
+	autosetuprebase = always
 [gpg]
-  program = /usr/local/bin/gpg2
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
 [commit]
-  gpgsign = true
+	gpgsign = true
 [alias]
-  s = status --short --branch
-  cf = commit --fixup
-  fixup = commit --amend --reuse-message=HEAD
-  pf = push --force
-  punch = push --force
-  nuke = clean -fxd
-  lg = log --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit
+	s = status --short --branch
+	cf = commit --fixup
+	fixup = commit --amend --reuse-message=HEAD
+	punch = push --force
+	nuke = clean -fxd
+	lg = log --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit

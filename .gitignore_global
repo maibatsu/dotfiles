@@ -1,11 +1,12 @@
 *~
+*.http
+*.log
+.gitconfig-local
 .DS_Store
+.env*
+.idea
+.vscode
 node_modules/
 build/
 dist/
-.idea
-.vscode
-*.http
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
