@@ -14,7 +14,9 @@
 [rerere]
 	enabled = true
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
+	log = true
+	renormalize = true
 [diff]
 	algorithm = patience
 	renames = true
