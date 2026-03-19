@@ -10,7 +10,12 @@
 [core]
 	editor = mate
 	autocrlf = input
+	untrackedCache = true
 	excludesfile = ~/.gitignore_global
+[apply]
+	whitespace = fix
+[branch]
+	sort = -committerdate
 [rerere]
 	enabled = true
 [merge]
@@ -41,3 +46,5 @@
 	punch = push --force
 	nuke = clean -fxd
 	lg = log --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	contributors = shortlog --summary --numbered

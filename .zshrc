@@ -23,7 +23,8 @@ git_clean_branches() {
 alias gbclean=git_clean_branches
 alias ll='ls -la'
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | tr -d '\n' | pbcopy"
-alias rmnode='find . -type d -name "node_modules" -prune -exec rm -rf '{}' +'
+alias l_rmnode='find . -type d -name "node_modules" -prune -exec rm -rf '{}' +'
+alias rmnode="rm -rf -- **/node_modules(/N)"
 
 # Prompt appearance
 COLOR_DEF='%f'
@@ -35,6 +36,7 @@ PROMPT='${COLOR_USR}%n ${COLOR_DIR}%~${vcs_info_msg_0_} ${COLOR_DEF}$ '
 
 # Version control (Git prompt integration)
 autoload -Uz vcs_info
+autoload -U zmv
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*:*' check-for-changes true
