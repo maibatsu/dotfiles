@@ -1,0 +1,29 @@
+# General behavior
+startup_message off
+autodetach on
+defscrollback 50000
+msgwait 2
+defutf8 on
+vbell on
+bell_msg "Activity in window %n (%t)"
+
+# Logging & Activity
+deflog on
+logfile ~/screenlog.%n
+activity on
+
+# Keybindings
+bind W windowlist -b
+bind R source ~/.screenrc
+bind K confirm kill
+
+# Status bar
+hardstatus alwayslastline
+# hardstatus string "%{= kw}%-w%{= BW}%n %t%{-}%+w %= %{= kw}%H | %c"
+hardstatus string "%{= kw}%-w%{= kW}[%n %t]%{-}%+w %= %{= kw}%H | %c"
+
+# Start windows
+screen -t shell 0
+screen -t work 1
+screen -t logs -h 100000 2
+select 0

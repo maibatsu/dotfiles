@@ -1,0 +1,8 @@
+theme = Xcode Light hc
+
+font-family = "IBM Plex Mono"
+font-size = 18
+font-thicken = true
+
+window-colorspace = display-p3
+window-decoration = client
