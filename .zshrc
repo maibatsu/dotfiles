@@ -19,6 +19,23 @@ git_clean_branches() {
 	fi
 }
 
+fl() {
+	local base="${1:-.}"
+	local abs_base="$(cd "$base" && pwd)"
+
+	(
+		cd "$abs_base" || exit
+
+		for f in **/*(D); do
+			if [[ -d $f ]]; then
+				print "$abs_base/$f/"
+			else
+				print "$abs_base/$f"
+			fi
+		done
+	)
+}
+
 # Aliases
 alias gbclean=git_clean_branches
 alias ll='ls -la'
