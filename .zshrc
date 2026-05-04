@@ -42,6 +42,7 @@ alias ll='ls -la'
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | tr -d '\n' | pbcopy"
 alias l_rmnode='find . -type d -name "node_modules" -prune -exec rm -rf '{}' +'
 alias rmnode="rm -rf -- **/node_modules(/N)"
+alias va="source .venv/bin/activate"
 
 # Prompt appearance
 COLOR_DEF='%f'
